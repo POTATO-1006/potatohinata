@@ -34,6 +34,10 @@
             position: relative;
         }
 
+        .form-link{
+            color: cyan;
+        }
+
         .screen {
             display: none;
         }
@@ -104,8 +108,8 @@
         .tab-btn {
             flex: 1;
             padding: 10px 0;
-            background-color: #333;
-            color: #888;
+            background-color:darkgrey;
+            color: black;
             border: none;
             border-radius: 6px;
             font-size: 16px;
@@ -308,6 +312,40 @@
             animation: fall 3s linear infinite;
         }
 
+        /* === 解説画面スタイル === */
+        .explanation-card {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 20px 16px;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .explanation-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #dddddd;
+            word-break: break-word;
+        }
+
+        .explanation-text p {
+            margin-bottom: 12px;
+        }
+
+        .explanation-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .back-btn {
+            margin-top: 24px;
+            background-color: #555;
+        }
+
+        .back-btn:hover {
+            background-color: #666;
+        }
+
         @keyframes fall {
             0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
             100% { transform: translateY(400px) rotate(360deg); opacity: 0; }
@@ -432,12 +470,88 @@
     <div class="screen" id="clear-screen">
         <div class="confetti-wrapper" id="confetti-wrapper"></div>
         <div class="clear-container">
-            <h1 class="clear-title">🎉GAME CLEAR!🎉</h1>
+            <h1 class="clear-title">GAME</h1>
+                <h1 class="clear-title">🎉CLEAR!🎉</h1>
             <div class="clear-card">
                 <span class="camera-icon">📸</span>
                 <div class="clear-message">
                     この画面をスクショして<br>報告しよう！
                 </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWIhifdgP0E-mW37cmNGhwV8sXObVwU0qe5RdrD01dPohk9w/viewform?usp=publish-editor" class="form-link">アンケートにご協力ください</a>
+            </div>
+        </div>
+    </div>
+    <!-- 解説画面 -->
+    <div class="screen" id="ex-screen">
+        <h2>解説</h2>
+        <div class="ex-scroll-container">
+            <div class="explanation-card">
+                <h3>1問目の解説</h3>
+                <div class="image-wrapper">
+                    <img src="1kaisetsu.png" alt="1問目の解説" class="quiz-image" onerror="this.parentElement.style.display='none'">
+                </div>
+                <p><strong>答え：とさか</strong></p>
+                <p>ルールにもあったように壁にぶつかるまで曲がれない迷路です。左上には黄色と緑色を結ぶと数字の8となる例が示されています。実際に黄色から緑色まで辿ってみると、「えい」のイラストと「と」のイラストを通り、つなげると「エイト」となります。</p>
+                <p>同様にして橙色から青色まで辿ってみると、「と」と「坂」のイラストを通るので答えは「とさか」となります。</p>
+            </div>
+            <div class="explanation-card">
+                <h3>2問目の解説</h3>
+                <div class="image-wrapper">
+                    <img src="2kaisetsu.png" alt="2問目の解説" class="quiz-image" onerror="this.parentElement.style.display='none'">
+                </div>
+                <p><strong>答え：こだま</strong></p>
+                <p>左に示されたイラストは上から「韓国語」「ポテト」「クイーン」です。それぞれを〇に当てはめた時に黒の部分だけを上から読むと「くてん」となります。</p>
+                <p>同様にして右を見ると、上から「コンパス」「だえん」「やまのてせん」となっており、黒丸の文字を読むと「こだま」となります。</p>
+            </div>
+            <div class="explanation-card">
+                <h3>3問目の解説</h3>
+                <div class="image-wrapper">
+                    <img src="3kaisetsu.png" alt="3問目の解説" class="quiz-image" onerror="this.parentElement.style.display='none'">
+                </div>
+                <p><strong>答え：うでわ</strong></p>
+                <p>上の紫色の枠は最初に送られたルールの枠と一致しています。下にある二つのデジタル数字のうち１つ目はルールの番号、２つ目は文字数の番号を示しています。</p>
+                <p>実際にルール２の２文字目、５の５文字目はそれぞれ「と」と「が」になっています。</p>
+                <p>同様にしてルール１の２文字目、５の９文字目を読むと「腕」と「輪」になっているため、答えは「腕輪」です。</p>
+            </div>
+            <div class="explanation-card">
+                <h3>4問目の解説</h3>
+                <div class="image-wrapper">
+                    <img src="4kaisetsu-1.png" alt="4問目の解説1" class="quiz-image" onerror="this.parentElement.style.display='none'">
+                </div>
+                <p><strong>答え：てすと</strong></p>
+                <p>まずは示されたように１～３問目までの答えを埋め、上に示された部分を読むと「さかさまでとこう」となります。実はこれまでの問題は全て上下をさかさまにして解くと答えが変わるようになっていたのでした。</p>
+                <div class="image-wrapper">
+                    <img src="4kaisetsu-2.png" alt="4問目の解説2" class="quiz-image" onerror="this.parentElement.style.display='none'">
+                </div>
+                <p><strong>逆さまの1問目の答え：かいと</strong></p>
+                <p>1問目を上下さかさまにすると、辿る色の順番が変わります。緑色から黄色に辿ると、「は」と「ち」のイラストを通ります。</p>
+                <p>同様に今度は青色から橙色に辿ると、「かい」と「と」のイラストを通るため答えは「かいと」に代わります。</p>
+                <div class="image-wrapper">
+                    <img src="4kaisetsu-3.png" alt="4問目の解説3" class="quiz-image" onerror="this.parentElement.style.display='none'">
+                </div>
+                <p><strong>逆さまの2問目の答え：せんす</strong></p>
+                <p>2問目を上下さかさまにすると、拾う文字が変わります。例示は変わらず「くてん」となっています。</p>
+                <p>そうすると、今度は上から順に「せ」「ん」「す」を拾うことになり、答えは「せんす」です。</p>
+                <div class="image-wrapper">
+                    <img src="4kaisetsu-4.png" alt="4問目の解説4" class="quiz-image" onerror="this.parentElement.style.display='none'">
+                </div>
+                <p><strong>逆さまの3問目の答え：にがて</strong></p>
+                <p>3問目をさかさまにすると、デジタル数字に変化する部分ができます。例に示された部分には変化はありません。</p>
+                <p>今回はルール６の５文字目、２の１文字目を読むと、「苦」「手」となっているため、答えは「にがて」となります。</p>
+                <div class="image-wrapper">
+                    <img src="4kaisetsu-5.png" alt="4問目の解説5" class="quiz-image" onerror="this.parentElement.style.display='none'">
+                </div>
+                <p>最後に4問目も上下さかさまにし、解きなおして出た三つの「かいと」「せんす」「にがて」という答えを入れます。</p>
+                <p>そして、左下から対応する文字を当てはめると、「てすとがせいかい」となるため、答えは「てすと」となります。</p>
+            </div>
+            <div class="explanation-card">
+                <h3>LAST MISSIONの解説</h3>
+                <div class="image-wrapper">
+                    <img src="last-mission-kaisetsu.png" alt="LAST MISSIONの解説" class="quiz-image" onerror="this.parentElement.style.display='none'">
+                </div>
+                <p>LAST MISSONの内容は「クライマックス」を迎えろとなっている。ここで再び最初に送られたルールを見よう。</p>
+                <p>ルールには「ゲスト」を迎えるコードは「GUEST」だとある。したがって「クライマックス」を迎えるコードは「CLIMAX」なのではないかと予想できる。</p>
+                <p>しかし、コードの入力は5文字までで一文字足りない。そこで、一度状態で送信ボタンを押してみると、赤いバツが表示され、まるで「CLIMAX」の文字のように見えることがわかる。この状態で再度送信ボタンを押すと、クリア画面を見ることができる。</p>
             </div>
         </div>
     </div>
@@ -448,6 +562,8 @@
     // === 設定・答え ===
     const correctAnswers = ["とさか", "こだま", "うでわ", "てすと"];
     let isClimaxPrepared = false;
+    
+    let isExplanationPrepared = false;
 
     // === 1. 5つのテキストボックスの入力制御（増殖バグ対策済み） ===
     const codeBoxes = document.querySelectorAll('.code-box');
@@ -502,6 +618,12 @@
         codeBoxes.forEach(box => codeUpper += box.value);
         codeUpper = codeUpper.trim().toUpperCase();
 
+        // 「POTAT」入力後の2回目送信で解説画面へ
+        if(isExplanationPrepared && codeUpper === "POTAT"){
+            showScreen('ex-screen')
+            return;
+        }
+
         // A. 「CLIMA」入力後の2回目送信でクリア画面へ
         if (isClimaxPrepared && (codeUpper === "CLIMA" || codeUpper === "CLIMAX")) {
             createConfetti();
@@ -509,7 +631,7 @@
             return;
         }
 
-        // B. 正解：「SEITO」
+        // B. 正解：「GUEST」
         if (codeUpper === "GUEST") {
             showStatusMark(mainStatusMark, "〇", "circle");
             codeBoxes.forEach(box => box.classList.add('is-correct-text'));
@@ -517,6 +639,12 @@
             setTimeout(() => {
                 showScreen('question-screen');
             }, 1000);
+
+        // 「CLIMA」の初回入力時
+        } else if(codeUpper === "POTAT"){
+            showStatusMark(mainStatusMark, "〇", "circle");
+            codeBoxes.forEach(box => box.classList.add('is-correct-text'));
+            isExplanationPrepared = true;
 
         // C. 伏線「CLIMA」の初回入力時（バツ固定演出）
         } else if (codeUpper === "CLIMA") {
